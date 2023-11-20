@@ -52,7 +52,7 @@ if (process.env.NODE_ENV === "production") {
       contentSecurityPolicy: false,
       crossOriginEmbedderPolicy: false,
       crossOriginResourcePolicy: false,
-      crossOriginOpenerPolicy: cross - origin,
+      crossOriginOpenerPolicy: false,
     })
   );
   app.use(hpp());
