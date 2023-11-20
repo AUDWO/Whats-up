@@ -32,6 +32,7 @@ const helmet = require("helmet");
 const hpp = require("hpp");
 const { sequelize } = require("./models");
 const logger = require("./logger");
+const cors = require("cors");
 
 passportConfig();
 //app.set("port", process.env.PORT || 8005);
@@ -58,7 +59,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.use(morgan("dev"));
 }
-app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 var cors = require("cors");
 const { deepStrictEqual } = require("assert");
@@ -85,9 +86,6 @@ app.use(session(sessionOption));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-//const cors = require("cors");
-//app.use(cors());
 
 /*
 app.listen(8005, () => {
