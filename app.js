@@ -32,7 +32,7 @@ const helmet = require("helmet");
 const hpp = require("hpp");
 const { sequelize } = require("./models");
 const logger = require("./logger");
-const cors = require("cors");
+//const cors = require("cors");
 
 passportConfig();
 //app.set("port", process.env.PORT || 8005);
