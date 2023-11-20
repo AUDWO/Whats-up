@@ -34,7 +34,7 @@ const { sequelize } = require("./models");
 const logger = require("./logger");
 
 passportConfig();
-app.set("port", process.env.PORT || 8005);
+//app.set("port", process.env.PORT || 8005);
 
 sequelize
   .sync({ force: false })
