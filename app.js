@@ -59,7 +59,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.use(morgan("dev"));
 }
-app.use(cors());
+//app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 var cors = require("cors");
 const { deepStrictEqual } = require("assert");
