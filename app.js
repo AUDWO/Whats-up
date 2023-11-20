@@ -53,6 +53,7 @@ if (process.env.NODE_ENV === "production") {
       crossOriginEmbedderPolicy: false,
       crossOriginResourcePolicy: false,
       crossOriginOpenerPolicy: false,
+      originAgentCluster: true,
     })
   );
   app.use(hpp());
