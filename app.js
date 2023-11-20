@@ -9,19 +9,16 @@ const passport = require("passport");
 const app = express();
 const passportConfig = require("./passport");
 const redis = require("redis");
-//1
-//const RedisStore = require("connect-redis").default;
+const RedisStore = require("connect-redis").default;
 
 dotenv.config();
-//2
-/*
+
 const redisClient = redis.createClient({
   url: `redis://${process.env.REDIS_HOST}:${process.env.REDIS_PORT}`,
   password: process.env.REDIS_PASSWORD,
   legacyMode: false,
 });
 redisClient.connect().catch(console.error);
-*/
 
 //const pageRouter = require("./routes/page");
 const authRouter = require("./routes/auth");
@@ -127,7 +124,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  //res.loacls.message = err.message;
+  res.loacls.message = err.message;
   res.locals.erorr = process.env.NODE_ENV !== "production" ? err : {};
   res.status(err.status || 500);
 });
