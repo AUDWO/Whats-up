@@ -86,10 +86,10 @@ app.use(session(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static(path.join(__dirname, "prototype-client/public")));
+app.use(express.static(path.join(__dirname, "prototype-client/build")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/prototype-client/public/index.html"));
+  res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
 
 app.use("/page", pageRouter);
@@ -102,7 +102,7 @@ app.use("/delete", deleteRouter);
 
 //react에서 react-router-dom으로 다룰 수 있게
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "/prototype-client/public/index.html"));
+  res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
 
 //에러 처리 담당
@@ -119,7 +119,7 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.erorr = process.env.NODE_ENV !== "production" ? err : {};
   res.status(err.status || 500);
-  res.sendFile(path.join(__dirname, "/prototype-client/public/index.html"));
+  res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
 
 module.exports = app;
