@@ -34,6 +34,7 @@ const logger = require("./logger");
 
 passportConfig();
 app.set("port", process.env.PORT || 8005);
+app.set("view engine", "ejs");
 
 sequelize
   .sync({ force: false })
