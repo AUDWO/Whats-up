@@ -60,9 +60,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(morgan("dev"));
 }
 app.use(express.json({ limit: "10mb" }));
-var cors = require("cors");
+//var cors = require("cors");
 const { deepStrictEqual } = require("assert");
-app.use(cors());
+//app.use(cors());
 app.use("/img", express.static(path.join(__dirname, "uploads")));
 app.use("/profileImg", express.static(path.join(__dirname, "profileImg")));
 app.use(express.json());
@@ -86,11 +86,6 @@ app.use(session(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*
-app.listen(8005, () => {
-  console.log("Listening on 8005");
-});*/
-
 app.use(express.static(path.join(__dirname, "prototype-client/build")));
 
 app.get("/", (req, res) => {
@@ -109,8 +104,8 @@ app.use("/delete", deleteRouter);
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
-//에러 처리 담당
 
+//에러 처리 담당
 app.use((req, res, next) => {
   const error = new Error(`${(req, method)} ${req.url} 라우터가 없습니다.`);
   error.status = 404;
@@ -124,7 +119,7 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.erorr = process.env.NODE_ENV !== "production" ? err : {};
   res.status(err.status || 500);
-  res.render("error");
+  res.sendFile(index.html);
 });
 
 module.exports = app;
