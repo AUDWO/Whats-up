@@ -20,7 +20,6 @@ const redisClient = redis.createClient({
 });
 redisClient.connect().catch(console.error);
 
-//const pageRouter = require("./routes/page");
 const authRouter = require("./routes/auth");
 const pageRouter = require("./routes/page");
 const postRouter = require("./routes/post");
@@ -32,7 +31,6 @@ const helmet = require("helmet");
 const hpp = require("hpp");
 const { sequelize } = require("./models");
 const logger = require("./logger");
-//const cors = require("cors");
 
 passportConfig();
 app.set("port", process.env.PORT || 8005);
@@ -61,7 +59,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.use(morgan("dev"));
 }
-//app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 var cors = require("cors");
 const { deepStrictEqual } = require("assert");
@@ -123,7 +120,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  //res.loacls.message = err.message;
+  res.loacls.message = err.message;
   res.locals.erorr = process.env.NODE_ENV !== "production" ? err : {};
   res.status(err.status || 500);
 });
