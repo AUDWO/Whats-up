@@ -50,8 +50,8 @@ if (process.env.NODE_ENV === "production") {
       contentSecurityPolicy: false,
       crossOriginEmbedderPolicy: false,
       crossOriginResourcePolicy: false,
-      //crossOriginOpenerPolicy: false,
-      //originAgentCluster: false,
+      crossOriginOpenerPolicy: false,
+      originAgentCluster: false,
     })
   );
   app.use(hpp());
