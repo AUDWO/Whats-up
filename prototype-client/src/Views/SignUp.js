@@ -52,10 +52,7 @@ const SignUp = () => {
       if (password !== passwordCheck) {
         return;
       }
-      const response = await axios.post(
-        "http://localhost:8005/auth/join",
-        formData
-      );
+      const response = await axios.post("/auth/join", formData);
       alert("회원가입 완료되었습니다!");
       navigate("/");
     } catch (error) {

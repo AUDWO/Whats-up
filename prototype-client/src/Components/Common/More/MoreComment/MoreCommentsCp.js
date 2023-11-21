@@ -42,14 +42,14 @@ const MoreCommentsCp = ({ storyId, diaryId }) => {
   const [comments, setComments] = useState([]);
 
   const handlePostStoryComment = async () => {
-    await axios.post("http://localhost:8005/comment/story", {
+    await axios.post("/comment/story", {
       content: content,
       StoryId: storyId,
     });
   };
 
   const handlePostDiaryComment = async () => {
-    await axios.post("http://localhost:8005/comment/diary", {
+    await axios.post("/comment/diary", {
       content: content,
       DiaryId: diaryId,
     });

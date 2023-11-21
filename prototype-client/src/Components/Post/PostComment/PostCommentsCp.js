@@ -46,7 +46,7 @@ const CommentModalCp = ({ postId }) => {
   const [comments, setComments] = useState([]);
 
   const handlePostComment = async () => {
-    await axios.post("http://localhost:8005/comment/post", {
+    await axios.post("/comment/post", {
       content: comment,
       PostId: postId,
     });

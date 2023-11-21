@@ -16,9 +16,7 @@ const UserPosts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8005/page/render-posts/"
-        );
+        const response = await axios.get("/page/render-posts/");
 
         setPosts((prev) => [...response.data]);
       } catch (error) {

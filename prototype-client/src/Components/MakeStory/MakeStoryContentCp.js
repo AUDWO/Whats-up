@@ -34,12 +34,9 @@ const MakeStoryContentCp = () => {
   const handlePostStory = async () => {
     if (storyImgUrl) {
       try {
-        const imgData = await axios.post(
-          "http://localhost:8005/post/storyimg",
-          formData
-        );
+        const imgData = await axios.post("/post/storyimg", formData);
 
-        const response = await axios.post("http://localhost:8005/post/story", {
+        const response = await axios.post("/post/story", {
           content: content,
           url: imgData.data.url,
         });

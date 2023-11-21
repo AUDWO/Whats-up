@@ -7,7 +7,7 @@ const Follow = ({ userId }) => {
   const navigate = useNavigate();
 
   const handleFollowing = async () => {
-    await axios.post(`http://localhost:8005/user/${userId}/follow`);
+    await axios.post(`/user/${userId}/follow`);
     navigate("/userr");
   };
   return (

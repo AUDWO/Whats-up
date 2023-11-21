@@ -33,9 +33,7 @@ const StoryContentsCp = () => {
   useEffect(() => {
     const fetchStoryies = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8005/page/render-story"
-        );
+        const response = await axios.get("/page/render-story");
 
         setStories([...response.data]);
       } catch (error) {

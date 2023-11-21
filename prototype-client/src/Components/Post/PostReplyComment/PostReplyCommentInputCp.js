@@ -26,7 +26,7 @@ const PostReplyCommentInputCp = ({ comment }) => {
 
   const handlePostReplyComment = async () => {
     try {
-      await axios.post("http://localhost:8005/comment/post", {
+      await axios.post("/comment/post", {
         content: reply,
         PostId: comment.PostId,
         PostCommentId: comment.id,

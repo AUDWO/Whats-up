@@ -33,7 +33,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      response = await axios.post("http://localhost:8005/auth/login", formData);
+      response = await axios.post("/auth/login", formData);
       if (response.data === "discord" || response.data === "not exist") {
         setPasswCheck(true);
       } else {

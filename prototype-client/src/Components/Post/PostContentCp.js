@@ -48,7 +48,7 @@ const PostContentCp = ({ postContent, userId }) => {
 
   useEffect(() => {
     const FindUerById = async (id) => {
-      const response = await axios.get(`http://localhost:8005/user/${id}`);
+      const response = await axios.get(`/user/${id}`);
       setPostUserInfo({ ...response.data });
       setFetchSuccess(true);
     };

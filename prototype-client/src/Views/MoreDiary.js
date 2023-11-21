@@ -38,7 +38,9 @@ const MoreDiary = () => {
           `/page/render-only-diaryinfo/${diaryId}`
         );
         setDiary({ ...response.data[0] });
-      } catch (error) {}
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchDiaryData();
