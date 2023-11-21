@@ -89,7 +89,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, "/prototype-client/build")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/prototype-client/build/sndex.html"));
+  res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
 
 app.use("/page", pageRouter);
@@ -102,7 +102,7 @@ app.use("/delete", deleteRouter);
 
 //react에서 react-router-dom으로 다룰 수 있게
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "/prototype-client/build/pndex.html"));
+  res.sendFile(path.join(__dirname, "/prototype-client/build/index.html"));
 });
 
 //에러 처리 담당
