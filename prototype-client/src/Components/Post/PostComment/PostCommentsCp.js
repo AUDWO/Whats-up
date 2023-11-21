@@ -55,9 +55,7 @@ const CommentModalCp = ({ postId }) => {
   useEffect(() => {
     const fetchPostsComment = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8005/page/render-post-comment"
-        );
+        const response = await axios.get("/page/render-post-comment");
         const filteredComments = response.data.filter(
           (comment) =>
             comment.PostId === postId && comment.PostCommentId === null
