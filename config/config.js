@@ -4,7 +4,7 @@ module.exports = {
   development: {
     username: "root",
     password: process.env.SEQUELIZE_PASSWORD,
-    database: "howling",
+    database: "whatsup",
     host: "127.0.0.1",
     dialect: "mysql",
   },
@@ -18,7 +18,7 @@ module.exports = {
   production: {
     username: "root",
     password: process.env.SEQUELIZE_PASSWORD,
-    database: "database_production",
+    database: "whatsup",
     host: "127.0.0.1",
     dialect: "mysql",
   },
